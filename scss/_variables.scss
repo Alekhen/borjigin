@@ -1,0 +1,62 @@
+// GLOBAL VARIABLES AND FUNCTIONS USED THROUGHOUT THE CJW THEME
+
+// Font Families
+$helvetica: "Helvetica Neue", Helvetica, Sans-Serif;
+$georgia: "Georgia", Serif;
+$enigmatic: "EnigmaticRegular", "Helvetica Neue", Helvetica, Sans-Serif;
+$enigmaticItalic: "EnigmaticItalic", "Helvetica Neue", Helvetica, Sans-Serif;
+$enigmaticBold: "EnigmaticBold", "Helvetica Neue", Helvetica, Sans-Serif;
+
+// Color Scheme
+$plum1: #5a4f55;
+$plum2: #40363e;
+$plum3: #3d2c34;
+$plum4: #271d25;
+$teal1: #9cd9d2;
+$teal2: #85d9c9;
+$teal3: #88bfba;
+$peach1: #f3e2ce;
+$peach2: #e3d1ad;
+$peach3: #d8b29b;
+$peach4: #d9a08c;
+
+// Color Scheme Functions
+@function black($opacity) {
+	@return rgba(0,0,0,$opacity)
+}
+@function white($opacity) {
+	@return rgba(255,255,255,$opacity)
+}
+@function plum1($opacity) {
+	@return rgba(90,79,85,$opacity)
+}
+@function plum2($opacity) {
+	@return rgba(64,54,62,$opacity)
+}
+@function plum3($opacity) {
+	@return rgba(61,44,52,$opacity)
+}
+@function plum4($opacity) {
+	@return rgba(39,29,37,$opacity)
+}
+@function teal1($opacity) {
+	@return rgba(156,217,210,$opacity)
+}
+@function teal2($opacity) {
+	@return rgba(113,217,201,$opacity)
+}
+@function teal3($opacity) {
+	@return rgba(136,191,186,$opacity)
+}
+@function peach1($opacity) {
+	@return rgba(243,226,206,$opacity)
+}
+@function peach2($opacity) {
+	@return rgba(227,209,173,$opacity)
+}
+@function peach3($opacity) {
+	@return rgba(216,178,155,$opacity)
+}
+@function peach4($opacity) {
+	@return rgba(217,160,140,$opacity)
+}
