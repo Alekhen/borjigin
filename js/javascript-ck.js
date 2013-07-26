@@ -1,1 +1,0 @@
-jQuery.noConflict();(function(e){e(function(){var e,t,n=navigator.userAgent.toLowerCase();if(n.match(/(iphone|ipod|ipad|android|blackberry)/)){e=!0;n.match(/(ipad)/)?t=!0:t=!1}else{e=!1;t=!1}e===!0&&t===!0;e===!0&&t===!1})})(jQuery);

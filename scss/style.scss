@@ -3,190 +3,43 @@
 @import "variables";
 @import "reset";
 @import "fonts";
-
-
-/* -------------------- PAGE ATTRIBUTES -------------------- */
-* {
-	margin: 0;
-	padding: 0;
-}
-html {
-	@include settings(relative, auto);
-	width: 100%;
-	height: 100%;
-}
-body {
-	color: white;
-	@include font(16, 24, normal, $helvetica);
-	@include settings(relative, auto);
-	@include bg($peach1);
-	width: 100% !important;
-	min-width: 1200px !important;
-	height: 100% !important;
-	height: auto;
-	min-height: 100%;
-	-moz-font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-}
-h1 {
-	@include font(48, 58, bold);
-}
-h2 {
-	@include font(36, 46, bold);
-}
-h3 {
-	@include font(24, 32, bold);
-}
-h4 {
-	@include font(22, 26, bold);
-}
-h5 {
-	@include font(18, 24, bold);
-}
-h6 {
-	@include font(16, 22, bold);
-}
-p {
-	@include font(16, 20);
-	margin-bottom: 24px;
-}
-a {
-	color: $teal1;
-	text-decoration: none;
-	outline: none;
-	cursor: pointer;
-	&:hover {
-		color: $plum4;
-		text-decoration: underline;
-		outline: none;
-		cursor: pointer;
-	}
-	&:active {
-		@include settings(relative);
-		top: 1px;
-		outline: none;
-		cursor: pointer;
-	}
-	& img {
-		border: 0;
-		outline: none;
-		cursor: pointer;
-	}
-}
-ul {
-	list-style: none;
-}
-ol {
-	list-style: lower-alpha;
-}
-img {
-	line-height: 0px;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0px;
-}
-input {
-	outline: none;
-}
-select {
-	outline: none;
-}
-option {
-	outline: none;
-}
-::-moz-selection {
-	color: white;
-	background-color: $plum4;
-}
-::selection {
-	color: white;
-	background-color: $plum4;
-}
-
-
-/* -------------------- UNIVERSAL -------------------- */
+@import "tags";
+@import "classes";
 @import "class-styles";
-.wrapper {
-	position: relative;
-	margin: 0 auto 0 auto;
-	width: 960px;
-	overflow: hidden;
-}
 
 
 /* -------------------- PAGE HEADER -------------------- */
 #page-header {
-	position: relative
+	@include settings(relative);
 }
 
 
 /* -------------------- PRIMARY NAVIGATION -------------------- */
 #primary-nav {
-	clear: both;
-	ul {
 
-		li {
-			position: relative;
-			float: left;
-			a {
-				
-				&:hover {
-				
-				}
-				&:active {
-					top: 0px;
-				}
-			}
-		}
-		&.children {
-
-			li {
-				float: none;
-				a {
-
-					&:hover {
-
-					}
-					&:active {
-
-					}
-				}
-			}
-		}
-	}
 }
 
 
-
-/* --- CONTENT --- */
+/* -------------------- PAGE CONTENT -------------------- */
 #content {
-	position: relative;
+	@include settings(relative);
 	clear: both;
 }
 #main {
-	position: relative;
-	width: 670px;
-	float: left;
+	@include settings(relative, null, null, left);
+	@include size(670);
 }
 #sidebar {
-	position: relative;
-	width: 350px;
-	float: right;
+	@include settings(relative, null, null, right);
+	@include size(350);
 }
 
 
 /* -------------------- PAGE FOOTER -------------------- */
 #page-footer {
-	position: relative;
+	@include settings(relative);
 	clear: both;
 }
 #disclaimer {
-	font-size: 14px;
-	a {
-
-		&:hover {
-
-		}
-	}
+	@include font(12);
 }

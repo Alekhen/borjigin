@@ -1,14 +1,14 @@
-/* --- CLASS STYLES --- */
+// CLASS STYLES ARE A QUICK WAY FOR WORDPRESS ADMIN USERS TO ADD TEXT STYLING
+
+/* -------------------- CLASS STYLES -------------------- */
 .left {
-	position: relative;
-	float: left;
+	@include settings(relative, null, null, left);
 }
 .right {
-	position: relative;
-	float: right;
+	@include settings(relative, null, null, right);
 }
 .center {
-	position: relative;
+	@include settings(relative);
 	margin-left: auto;
 	margin-right: auto;
 }

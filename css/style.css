@@ -3,8 +3,8 @@ Theme Name:
 Theme URI: http://.com
 Description: 
 Version: 1 (WP2.6.2)
-Author: Colton Wiscombe
-Author URI: http://mongoldude.com
+Author: 
+Author URI: 
 Tags: 
 */
 /* -------------------- HTML RESET -------------------- */
@@ -14,18 +14,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
 /* -------------------- FONTS -------------------- */
-@font-face { font-family: 'EnigmaticRegular'; src: url("../fonts/Enigma__2-webfont.eot"); src: url("../fonts/Enigma__2-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Enigma__2-webfont.woff") format("woff"), url("../fonts/Enigma__2-webfont.ttf") format("truetype"), url("../fonts/Enigma__2-webfont.svg#EnigmaticRegular") format("svg"); font-weight: normal; font-style: normal; }
-
-@font-face { font-family: 'EnigmaticItalic'; src: url("../fonts/Enigma_2i-webfont.eot"); src: url("../fonts/Enigma_2i-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Enigma_2i-webfont.woff") format("woff"), url("../fonts/Enigma_2i-webfont.ttf") format("truetype"), url("../fonts/Enigma_2i-webfont.svg#EnigmaticItalic") format("svg"); font-weight: normal; font-style: normal; }
-
-@font-face { font-family: 'EnigmaticBold'; src: url("../fonts/EnigmaB_2-webfont.eot"); src: url("../fonts/EnigmaB_2-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/EnigmaB_2-webfont.woff") format("woff"), url("../fonts/EnigmaB_2-webfont.ttf") format("truetype"), url("../fonts/EnigmaB_2-webfont.svg#EnigmaticBold") format("svg"); font-weight: normal; font-style: normal; }
-
-/* -------------------- PAGE ATTRIBUTES -------------------- */
+/* -------------------- TAGS & PAGE ATTRIBUTES -------------------- */
 * { margin: 0; padding: 0; }
 
 html { position: relative; overflow: auto; width: 100%; height: 100%; }
 
-body { color: white; font: normal 16px/24px "Helvetica Neue", Helvetica, Sans-Serif; position: relative; overflow: auto; background: #f3e2ce; width: 100% !important; min-width: 1200px !important; height: 100% !important; height: auto; min-height: 100%; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; }
+body { color: black; font: normal 16px/24px "Helvetica Neue", Helvetica, Sans-Serif; position: relative; overflow: auto; background: white; width: 100% !important; min-width: 1200px !important; height: 100% !important; height: auto; min-height: 100%; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; }
 
 h1 { font-size: 48px; line-height: 58px; font-weight: bold; }
 
@@ -41,8 +35,8 @@ h6 { font-size: 16px; line-height: 22px; font-weight: bold; }
 
 p { font-size: 16px; line-height: 20px; margin-bottom: 24px; }
 
-a { color: #9cd9d2; text-decoration: none; outline: none; cursor: pointer; }
-a:hover { color: #271d25; text-decoration: underline; outline: none; cursor: pointer; }
+a { color: blue; text-decoration: none; outline: none; cursor: pointer; }
+a:hover { color: lightblue; text-decoration: underline; outline: none; cursor: pointer; }
 a:active { position: relative; top: 1px; outline: none; cursor: pointer; }
 a img { border: 0; outline: none; cursor: pointer; }
 
@@ -60,12 +54,14 @@ select { outline: none; }
 
 option { outline: none; }
 
-::-moz-selection { color: white; background-color: #271d25; }
+::-moz-selection { color: white; background-color: red; }
 
-::selection { color: white; background-color: #271d25; }
+::selection { color: white; background-color: red; }
 
-/* -------------------- UNIVERSAL -------------------- */
-/* --- CLASS STYLES --- */
+/* -------------------- GLOBAL CLASSES -------------------- */
+.wrapper { position: relative; margin: 0 auto 0 auto; width: 960px; overflow: hidden; }
+
+/* -------------------- CLASS STYLES -------------------- */
 .left { position: relative; float: left; }
 
 .right { position: relative; float: right; }
@@ -88,25 +84,18 @@ option { outline: none; }
 
 .lowercase { text-transform: lowercase; }
 
-.wrapper { position: relative; margin: 0 auto 0 auto; width: 960px; overflow: hidden; }
-
 /* -------------------- PAGE HEADER -------------------- */
 #page-header { position: relative; }
 
 /* -------------------- PRIMARY NAVIGATION -------------------- */
-#primary-nav { clear: both; }
-#primary-nav ul li { position: relative; float: left; }
-#primary-nav ul li a:active { top: 0px; }
-#primary-nav ul.children li { float: none; }
-
-/* --- CONTENT --- */
+/* -------------------- PAGE CONTENT -------------------- */
 #content { position: relative; clear: both; }
 
-#main { position: relative; width: 670px; float: left; }
+#main { position: relative; float: left; width: 670px; }
 
-#sidebar { position: relative; width: 350px; float: right; }
+#sidebar { position: relative; float: right; width: 350px; }
 
 /* -------------------- PAGE FOOTER -------------------- */
 #page-footer { position: relative; clear: both; }
 
-#disclaimer { font-size: 14px; }
+#disclaimer { font-size: 12px; }

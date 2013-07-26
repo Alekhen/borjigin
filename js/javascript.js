@@ -1,34 +1,32 @@
-jQuery.noConflict();
-(function($) {
+/*global alert, console, $, cycle, _gaq, Device, Query, Validate */
+
+/**
+ * Definition of the JS object.
+ *
+ * @require jquery.js
+ * @require jquery.cycle.js
+ * @require jquery.easing.js
+ * @require query.js
+ * @require device.js
+ * @require validate.js
+ */
+var JS = {
+
+	/**
+	 * Initialization Function - Let's Get Everything Started!
+	 *
+	 * @since JS 1.0
+	 */
+	init: function() {
+
+		// Do Nothing
+
+	}
+
+// END - JS object
+};
+
 $(function() {
-
-	
-
-	// Device Type Setup
-	var browserIsMobile, browserIsiPad;
-	var deviceType = navigator.userAgent.toLowerCase();
-	if(deviceType.match(/(iphone|ipod|ipad|android|blackberry)/)) {
-		browserIsMobile = true;
-		if(deviceType.match(/(ipad)/)) {
-			browserIsiPad = true;
-		} else {
-			browserIsiPad = false;
-		}
-	} else {
-		browserIsMobile = false;
-		browserIsiPad = false;
-	}
-	if(browserIsMobile === true && browserIsiPad === true) {
-		//$body.append('<meta name="viewport" content="initial-scale=1, maximum-scale=1">');
-	}
-	if(browserIsMobile === true && browserIsiPad === false) {
-		//$body.append('<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5">');
-	}
-
-
-
-
-
-
+	// Initiate the JS object
+	JS.init();
 });
-})(jQuery);
