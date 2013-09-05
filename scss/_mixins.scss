@@ -39,7 +39,7 @@
 		} @else {
 			text-shadow: white($opacity) 0 -1px 0;
 		}
-	} else {
+	} @else {
 		@if $reverse == false {
 			text-shadow: black($opacity) 0 1px 0;
 		} @else {
