@@ -32,11 +32,19 @@
 }
 
 // Used for adding a letterpress effect
-@mixin letterpress($opacity, $reverse:false) {
-	@if $reverse == false {
-		text-shadow: white($opacity) 0 1px 0;
-	} @else {
-		text-shadow: white($opacity) 0 -1px 0;
+@mixin letterpress($opacity, $reverse:false, $dark:false) {
+	@if $dark == false {
+		@if $reverse == false {
+			text-shadow: white($opacity) 0 1px 0;
+		} @else {
+			text-shadow: white($opacity) 0 -1px 0;
+		}
+	} else {
+		@if $reverse == false {
+			text-shadow: black($opacity) 0 1px 0;
+		} @else {
+			text-shadow: black($opacity) 0 -1px 0;
+		}
 	}
 }
 
