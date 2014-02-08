@@ -263,3 +263,9 @@
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color2', endColorstr='$color1', GradientType=1);
 	}
 }
+
+// Used for adding antialiased text
+@mixin aliasing($params) {
+	-webkit-font-smoothing: $params;
+	font-smoothing: $params;
+}

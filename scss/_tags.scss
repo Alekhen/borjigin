@@ -13,6 +13,7 @@ html {
 body {
 	color: $bodyTextColor;
 	@include font(16, 24, 300, $helveticaLight);
+	@include aliasing(subpixel-antialiased);
 	@include settings(relative, auto);
 	@include bg($bodyBackgroundColor);
 	width: 100% !important;
@@ -20,8 +21,6 @@ body {
 	height: 100% !important;
 	height: auto;
 	min-height: 100%;
-	-webkit-font-smoothing: subpixel-antialiased;
-	font-smoothing: subpixel-antialiased;
 }
 h1 {
 	@include font(48, 58, 700);
