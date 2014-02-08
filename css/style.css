@@ -19,7 +19,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html { position: relative; overflow: auto; width: 100%; height: 100%; }
 
-body { color: black; font: 300 16px/24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; position: relative; overflow: auto; background: white; width: 100% !important; min-width: 1200px !important; height: 100% !important; height: auto; min-height: 100%; }
+body { color: black; font: 300 16px/24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; background: white; -webkit-box-flex-flow: column; -moz-box-flex-flow: column; -webkit-flex-flow: column; -ms-flex-flow: column; flex-flow: column; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
 h1 { font-size: 48px; line-height: 58px; font-weight: 700; }
 
@@ -59,7 +59,7 @@ option { outline: none; }
 ::selection { color: white; background-color: red; }
 
 /* -------------------- GLOBAL CLASSES -------------------- */
-.wrapper { position: relative; margin: 0 auto 0 auto; width: 960px; overflow: hidden; }
+.wrapper { width: 960px; }
 
 /* -------------------- CLASS STYLES -------------------- */
 .left { position: relative; float: left; }
@@ -85,17 +85,18 @@ option { outline: none; }
 .lowercase { text-transform: lowercase; }
 
 /* -------------------- PAGE HEADER -------------------- */
-#page-header { position: relative; }
+#page-header { -webkit-box-ordinal-group: 0; -moz-box-ordinal-group: 0; -ms-flex-order: 0; -webkit-order: 0; order: 0; margin: auto; }
 
 /* -------------------- PRIMARY NAVIGATION -------------------- */
 /* -------------------- PAGE CONTENT -------------------- */
-#content { position: relative; clear: both; }
+#content { margin: auto; }
+#content .wrapper { -webkit-box-flex-flow: row; -moz-box-flex-flow: row; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
-#main { position: relative; float: left; width: 670px; }
+#main { width: 670px; margin: auto; }
 
-#sidebar { position: relative; float: right; width: 350px; }
+#sidebar { width: 350px; margin: auto; }
 
 /* -------------------- PAGE FOOTER -------------------- */
-#page-footer { position: relative; clear: both; }
+#page-footer { margin: auto; }
 
 #disclaimer { font-size: 12px; }

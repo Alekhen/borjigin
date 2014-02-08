@@ -14,13 +14,8 @@ body {
 	color: $bodyTextColor;
 	@include font(16, 24, 300, $helveticaLight);
 	@include aliasing(subpixel-antialiased);
-	@include settings(relative, auto);
 	@include bg($bodyBackgroundColor);
-	width: 100% !important;
-	min-width: 1200px !important;
-	height: 100% !important;
-	height: auto;
-	min-height: 100%;
+	@include flexbox(column, center);
 }
 h1 {
 	@include font(48, 58, 700);

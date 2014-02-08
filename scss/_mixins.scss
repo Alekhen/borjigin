@@ -116,6 +116,85 @@
 	}
 }
 
+// Used to set flexbox flow attributes on a flexbox container
+@mixin flexbox-flow($params) {
+	-webkit-box-flex-flow: $params;
+	-moz-box-flex-flow: $params;
+	-webkit-flex-flow: $params;
+	-ms-flex-flow: $params;
+	flex-flow: $params;
+}
+
+// Used to set flexbox justification
+@mixin flexbox-justify($params) {
+	-webkit-box-justify-content: $params;
+	-moz-box-justify-content: $params;
+	-webkit-justify-content: $params;
+	-ms-justify-content: $params;
+	justify-content: $params;
+}
+
+// Used to set an element as a flexbox container and define its attributes
+@mixin flexbox($params:null, $justify:null, $display:null) {
+	@if $params == null {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		@if $justify == null {} @else {
+			@include flexbox-justify($justify);
+		}
+	} @else {
+		@include flexbox-flow($params);
+		@if $justify == null {
+			@if $display == null {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+			}
+		} @else {
+			@include flexbox-justify($justify);
+			@if $display == null {
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+			}
+		}
+	}
+}
+
+// Used to set the order number of a flex element
+@mixin order($num) {
+	-webkit-box-ordinal-group: $num;
+	-moz-box-ordinal-group: $num;
+	-ms-flex-order: $num;
+	-webkit-order: $num;
+	order: $num;
+}
+
+// Used to set the flex attributes of a flex element
+@mixin flex($params:null, $num:null) {
+	@if $params == null {
+		@if $num == null {} @else {
+			@include order($num);
+		}
+	} @else {
+		-webkit-box-flex: $params;
+		-moz-box-flex: $params;
+		-webkit-flex: $params;
+		-ms-flex: $params;
+		flex: $params;
+		@if $num == null {} @else {
+			@include order($num);
+		}
+	}
+}
+
 // Used as a shorthand for setting the width and height properties of an object
 // NOTE: Pixels only
 @mixin size($width:null, $height:null, $widthImportant:null, $heightImportant:null) {

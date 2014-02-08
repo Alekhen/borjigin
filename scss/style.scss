@@ -10,7 +10,8 @@
 
 /* -------------------- PAGE HEADER -------------------- */
 #page-header {
-	@include settings(relative);
+	@include flex(null, 0);
+	margin: auto;
 }
 
 
@@ -22,23 +23,26 @@
 
 /* -------------------- PAGE CONTENT -------------------- */
 #content {
-	@include settings(relative);
-	clear: both;
+	margin: auto;
+	.wrapper {
+		@include flexbox(row, center);
+	}
 }
 #main {
-	@include settings(relative, null, null, left);
+	//@include settings(relative, null, null, left);
 	@include size(670);
+	margin: auto;
 }
 #sidebar {
-	@include settings(relative, null, null, right);
+	//@include settings(relative, null, null, right);
 	@include size(350);
+	margin: auto;
 }
 
 
 /* -------------------- PAGE FOOTER -------------------- */
 #page-footer {
-	@include settings(relative);
-	clear: both;
+	margin: auto;
 }
 #disclaimer {
 	@include font(12);

@@ -2,8 +2,5 @@
 
 /* -------------------- GLOBAL CLASSES -------------------- */
 .wrapper {
-	position: relative;
-	margin: 0 auto 0 auto;
-	width: 960px;
-	overflow: hidden;
+	@include size(960);
 }
