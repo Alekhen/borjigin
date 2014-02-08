@@ -12,7 +12,7 @@ html {
 }
 body {
 	color: $bodyTextColor;
-	@include font(16, 24, normal, $helvetica);
+	@include font(16, 24, 300, $helveticaLight);
 	@include settings(relative, auto);
 	@include bg($bodyBackgroundColor);
 	width: 100% !important;
@@ -20,26 +20,26 @@ body {
 	height: 100% !important;
 	height: auto;
 	min-height: 100%;
-	-moz-font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-smoothing: subpixel-antialiased;
 }
 h1 {
-	@include font(48, 58, bold);
+	@include font(48, 58, 700);
 }
 h2 {
-	@include font(36, 46, bold);
+	@include font(36, 46, 700);
 }
 h3 {
-	@include font(24, 32, bold);
+	@include font(24, 32, 700);
 }
 h4 {
-	@include font(22, 26, bold);
+	@include font(22, 26, 700);
 }
 h5 {
-	@include font(18, 24, bold);
+	@include font(18, 24, 700);
 }
 h6 {
-	@include font(16, 22, bold);
+	@include font(16, 22, 700);
 }
 p {
 	@include font(16, 20);

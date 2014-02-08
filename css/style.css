@@ -19,19 +19,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html { position: relative; overflow: auto; width: 100%; height: 100%; }
 
-body { color: black; font: normal 16px/24px "Helvetica Neue", Helvetica, Sans-Serif; position: relative; overflow: auto; background: white; width: 100% !important; min-width: 1200px !important; height: 100% !important; height: auto; min-height: 100%; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; }
+body { color: black; font: 300 16px/24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; position: relative; overflow: auto; background: white; width: 100% !important; min-width: 1200px !important; height: 100% !important; height: auto; min-height: 100%; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; }
 
-h1 { font-size: 48px; line-height: 58px; font-weight: bold; }
+h1 { font-size: 48px; line-height: 58px; font-weight: 700; }
 
-h2 { font-size: 36px; line-height: 46px; font-weight: bold; }
+h2 { font-size: 36px; line-height: 46px; font-weight: 700; }
 
-h3 { font-size: 24px; line-height: 32px; font-weight: bold; }
+h3 { font-size: 24px; line-height: 32px; font-weight: 700; }
 
-h4 { font-size: 22px; line-height: 26px; font-weight: bold; }
+h4 { font-size: 22px; line-height: 26px; font-weight: 700; }
 
-h5 { font-size: 18px; line-height: 24px; font-weight: bold; }
+h5 { font-size: 18px; line-height: 24px; font-weight: 700; }
 
-h6 { font-size: 16px; line-height: 22px; font-weight: bold; }
+h6 { font-size: 16px; line-height: 22px; font-weight: 700; }
 
 p { font-size: 16px; line-height: 20px; margin-bottom: 24px; }
 
