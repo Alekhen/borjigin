@@ -1,11 +1,16 @@
+// Wordpress Theme Declaration
 @import "wordpress";
+
+// Import Meta Data
 @import "mixins";
 @import "variables";
+
+// Import Styling
 @import "reset";
 @import "fonts";
 @import "tags";
 @import "classes";
-@import "class-styles";
+
 
 
 /* -------------------- PAGE HEADER -------------------- */
@@ -26,6 +31,7 @@
 }
 
 
+
 /* -------------------- PAGE CONTENT -------------------- */
 #content {
 	@include flexbox(column, center);
@@ -41,6 +47,7 @@
 	@include bg(black(0.05));
 	@include flex(0 1 30%);
 }
+
 
 
 /* -------------------- PAGE FOOTER -------------------- */
@@ -67,3 +74,8 @@
 	text-align: center;
 	margin: auto;
 }
+
+
+
+// Import Responsive Media Queries
+@import "responsive";

@@ -61,18 +61,27 @@ option { outline: none; }
 /* -------------------- GLOBAL CLASSES -------------------- */
 .wrapper { width: 960px; margin: auto; }
 
-/* -------------------- CLASS STYLES -------------------- */
+/* -------------------- ELEMENT POSITION STYLES -------------------- */
+.fixed { position: fixed !important; }
+
+.relative { position: relative !important; }
+
+.absolute { position: absolute !important; }
+
 .left { position: relative; float: left; }
 
 .right { position: relative; float: right; }
 
 .center { position: relative; margin-left: auto; margin-right: auto; }
 
+/* -------------------- TYPOGRAPHIC STYLES -------------------- */
 .text-left { text-align: left; }
 
 .text-right { text-align: right; }
 
 .text-center { text-align: center; }
+
+.hide-text { text-indent: -9999px; overflow: hidden; }
 
 .bold { font-weight: bold; }
 
@@ -107,3 +116,8 @@ option { outline: none; }
 #sitemap li { position: relative; display: inline-block; float: left; left: 50%; }
 
 #disclaimer { font-size: 12px; text-align: center; margin: auto; }
+
+/* -------------------- LARGE DESKTOP -------------------- */
+/* -------------------- PORTRAIT TABLET TO LANDSCAPE AND DESKTOP -------------------- */
+/* -------------------- LANDSCAPE PHONE TO PORTRAIT TABLET -------------------- */
+/* -------------------- LANDSCAPE PHONES AND DOWN -------------------- */

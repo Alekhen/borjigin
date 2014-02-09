@@ -227,6 +227,31 @@
 	}
 }
 
+// Used for setting the background size to cover (aka. allowing the bg image to scale to fit the browser window)
+@mixin bg-cover($color:null, $image:null) {
+	@if $color == null {
+		background: url(#{imagePath($image)}) no-repeat center center fixed;
+		-o-background-size: cover;
+		-moz-background-size: cover;
+		-webkit-background-size: cover;
+		background-size: cover;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+	} @else {
+		@if $image == null {
+			background: $color;
+		} @else {
+			background: $color url(#{imagePath($image)}) no-repeat center center fixed;
+			-o-background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			background-size: cover;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+		}
+	}
+}
+
 // Used to specify unique border sizes to each side of an element
 // NOTE: Pixels only
 @mixin border-size-unique($topSize:1, $rightSize:1, $bottomSize:1, $leftSize:1, $weight:solid, $color:black) {
