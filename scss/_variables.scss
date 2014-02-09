@@ -17,10 +17,34 @@ $black: #000000;
 	@return rgba(255,255,255,$opacity)
 }
 
-// Standard Page Element Colors
+// General Variables
 $bodyTextColor: black;
 $bodyBackgroundColor: white;
 $linkColor: blue;
 $linkHoverColor: lightblue;
 $selectionColor: white;
 $selectionBackgroundColor: red;
+$formElementHeight: 20;
+
+// Input Field Variables
+$inputTextColor: black;
+$inputPlaceholderColor: gainsboro;
+$inputBackgroundColor: white;
+$inputBorderColor: lightgray;
+$inputBorderColorFocus: lighten(deepskyblue, 10%);
+$inputFocusGlowColor: lighten(deepskyblue, 20%);
+$inputInvalidTextColor: firebrick;
+$inputInvalidBorderColor: lighten(crimson, 10%);
+$inputInvalidFocusBorderColor: crimson;
+$inputInvalidFocusGlowColor: lighten(crimson, 20%);
+$inputBorderRadius: 4px;
+
+// Button Variables
+$buttonTextColor: black;
+$buttonBackgroundColor: gainsboro;
+$buttonBorderColor: darken(gainsboro, 5%);
+$buttonHoverBackgroundColor: lighten($buttonBackgroundColor, 5%);
+$buttonHoverBorderColor: lighten($buttonBorderColor, 5%);
+$buttonActiveBackgroundColor: darken($buttonBackgroundColor, 5%);
+$buttonActiveBorderColor: darken($buttonBorderColor, 5%);
+$buttonBorderRadius: 4px;

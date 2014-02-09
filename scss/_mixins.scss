@@ -295,13 +295,37 @@
 	border-bottom-right-radius: $bottomRight + px;
 }
 
-// Used to apply CSS3 transitions to elements
-@mixin transition($speed:300, $easing:ease, $feature:all) {
-	-ms-transition: $feature $speed + ms $easing;
-	-o-transition: $feature $speed + ms $easing;
-	-moz-transition: $feature $speed + ms $easing;
-	-webkit-transition: $feature $speed + ms $easing;
-	transition: $feature $speed + ms $easing;
+// Used to apply transitions to elements
+@mixin transition($param1:null, $param2:null, $param3:null) {
+	@if $param3 == null {
+		@if $param2 == null {
+			@if $param1 == null {
+				-ms-transition: all 300ms ease;
+				-o-transition: all 300ms ease;
+				-moz-transition: all 300ms ease;
+				-webkit-transition: all 300ms ease;
+				transition: all 300ms ease;
+			} @else {
+				-ms-transition: $param1;
+				-o-transition: $param1;
+				-moz-transition: $param1;
+				-webkit-transition: $param1;
+				transition: $param1;
+			}
+		} @else {
+			-ms-transition: $param1, $param2;
+			-o-transition: $param1, $param2;
+			-moz-transition: $param1, $param2;
+			-webkit-transition: $param1, $param2;
+			transition: $param1, $param2;
+		}
+	} @else {
+		-ms-transition: $param1, $param2, $param3;
+		-o-transition: $param1, $param2, $param3;
+		-moz-transition: $param1, $param2, $param3;
+		-webkit-transition: $param1, $param2, $param3;
+		transition: $param1, $param2, $param3;
+	}
 }
 
 // Used for moving an element vertically

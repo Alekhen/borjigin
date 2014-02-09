@@ -1,10 +1,6 @@
 // GENERAL TAG STYLING FOR THE SITE
 
-/* -------------------- TAGS & PAGE ATTRIBUTES -------------------- */
-* {
-	margin: 0;
-	padding: 0;
-}
+/* -------------------- GENERAL TAGS & PAGE ATTRIBUTES -------------------- */
 html {
 	@include settings(relative, auto);
 	width: 100%;
@@ -17,6 +13,17 @@ body {
 	@include bg($bodyBackgroundColor);
 	@include flexbox(column, center);
 }
+::-moz-selection {
+	color: $selectionColor;
+	background-color: $selectionBackgroundColor;
+}
+::selection {
+	color: $selectionColor;
+	background-color: $selectionBackgroundColor;
+}
+
+
+/* -------------------- TAGS ASSOCIATED WITH TEXT -------------------- */
 h1 {
 	@include font(48, 58, 700);
 }
@@ -62,21 +69,273 @@ a {
 		cursor: pointer;
 	}
 }
+strong {
+	font-weight: 700;
+}
+em {
+	font-style: italic;
+}
+
+
+/* -------------------- TAGS ASSOCIATED WITH LISTS -------------------- */
 ul {
 	list-style: none;
 }
 ol {
 	list-style: lower-alpha;
 }
+
+
+/* -------------------- TAGS ASSOCIATED WITH IMAGES & FIGURES -------------------- */
 img {
 	line-height: 0px;
 }
+caption {
+
+}
+figure {
+
+}
+
+
+/* -------------------- TAGS ASSOCIATED WITH TABLES -------------------- */
 table {
 	border-collapse: collapse;
 	border-spacing: 0px;
 }
+thead {
+
+}
+tbody {
+
+}
+tfoot {
+
+}
+
+
+/* -------------------- TAGS ASSOCIATED WITH FORMS -------------------- */
+form {
+
+}
+fieldset {
+
+}
+legend {
+
+}
+label {
+	&[for] {
+		cursor: pointer;
+	}
+}
 input {
+	color: $inputTextColor;
+	@include font(14, $formElementHeight, 300, $helveticaLight);
+	font-size: 100%;
+	vertical-align: middle;
+	*overflow: visible;
+	border-radius: $inputBorderRadius;
+	border: 1px solid $inputBorderColor;
 	outline: none;
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+	&:-moz-placeholder {
+		color: $inputPlaceholderColor;
+	}
+	&:-ms-input-placeholder {
+		color: $inputPlaceholderColor;
+	}
+	&::-webkit-input-placeholder {
+		color: $inputPlaceholderColor;
+	}
+	&[disabled] {
+		cursor: not-allowed;
+	}
+	&[readonly] {
+		@extend input[disabled];
+	}
+	&[type="text"] {
+		color: $inputTextColor;
+		@include bg($inputBackgroundColor);
+		@include settings(null, null, inline-block);
+		@include size(null, $formElementHeight);
+		padding: 4px 6px;
+		border: 1px solid $inputBorderColor;
+		border-radius: $inputBorderRadius;
+		@include box-shadow(inset 0 1px 1px black(0.075));
+		@include transition(border 0.2s linear, box-shadow 0.2s linear);
+		&:focus {
+			border-color: $inputBorderColorFocus;
+			outline: none;
+			outline: thin dotted \9;
+			/* IE6-9 */
+			@include box-shadow(inset 0 1px 1px black(0.075), 0 0 6px $inputFocusGlowColor);
+		}
+	}
+	&[type="password"] {
+		@extend input[type="text"];
+	}
+	&[type="datetime"] {
+		@extend input[type="text"];
+	}
+	&[type="datetime-local"] {
+		@extend input[type="text"];
+	}
+	&[type="date"] {
+		@extend input[type="text"];
+	}
+	&[type="month"] {
+		@extend input[type="text"];
+	}
+	&[type="time"] {
+		@extend input[type="text"];
+	}
+	&[type="week"] {
+		@extend input[type="text"];
+	}
+	&[type="number"] {
+		@extend input[type="text"];
+	}
+	&[type="email"] {
+		@extend input[type="text"];
+	}
+	&[type="url"] {
+		@extend input[type="text"];
+	}
+	&[type="tel"] {
+		@extend input[type="text"];
+	}
+	&[type="color"] {
+		@extend input[type="text"];
+	}
+	&[type="file"] {
+		@extend input[type="text"];
+		@include font(12, $formElementHeight, 300, $helveticaLight);
+		line-height: $formElementHeight + 10px;
+		height: $formElementHeight + 10px; // In IE7, the height of the select element cannot be changed by height, only font-size
+		*margin-top: 4px; // For IE7, add top margin to align select with labels
+		width: auto;
+		&:focus {
+			outline: thin dotted $inputBorderColorFocus;
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+		}
+	}
+	&[type="image"] {
+		width: auto;
+	}
+	&[type="button"] {
+		color: $buttonTextColor;
+		background-color: $buttonBackgroundColor;
+		width: auto;
+		border-radius: $buttonBorderRadius;
+		border: 1px solid $buttonBorderColor;
+		cursor: pointer;
+		-webkit-appearance: button;
+		@include transition(all 200ms ease);
+		&:hover {
+			background-color: $buttonHoverBackgroundColor;
+			border-color: $buttonHoverBorderColor;
+		}
+		&:active {
+			background-color: $buttonActiveBackgroundColor;
+			border-color: $buttonActiveBorderColor;
+			@include transition(none);
+		}
+	}
+	&[type="reset"] {
+		@extend input[type="button"];
+	}
+	&[type="submit"] {
+		@extend input[type="button"];
+	}
+	&[type="radio"] {
+		margin: 0 2px 0 0;
+		line-height: normal;
+		width: auto;
+		cursor: pointer;
+		&[disabled] {
+			background-color: transparent;
+		}
+		&[readonly] {
+			@extend input[type="radio"][disabled];
+		}
+		&:focus {
+			outline: thin dotted $inputBorderColorFocus;
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+		}
+	}
+	&[type="checkbox"] {
+		margin: 0 2px 0 0;
+		line-height: normal;
+		width: auto;
+		cursor: pointer;
+		&[disabled] {
+			background-color: transparent;
+		}
+		&[readonly] {
+			@extend input[type="checkbox"][disabled];
+		}
+		&:focus {
+			outline: thin dotted $inputBorderColorFocus;
+			outline: 5px auto -webkit-focus-ring-color;
+			outline-offset: -2px;
+		}
+	}
+	&[type="search"] {
+		@extend input[type="text"];
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+		-webkit-appearance: textfield;
+		&::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+	}
+	&:focus {
+		&:invalid {
+			color: $inputInvalidTextColor;
+			border-color: $inputInvalidBorderColor;
+			&:focus {
+				border-color: $inputInvalidFocusBorderColor;
+				@include box-shadow(0 0 6px $inputInvalidFocusGlowColor);
+			}
+		}
+	}
+}
+button {
+	color: $buttonTextColor;
+	@include font(14, $formElementHeight, 300, $helveticaLight);
+	font-size: 100%;
+	background-color: $buttonBackgroundColor;
+	vertical-align: middle;
+	*overflow: visible;
+	border-radius: $buttonBorderRadius;
+	border: 1px solid $buttonBorderColor;
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance: button;
+	@include transition(all 200ms ease);
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+	&:hover {
+		background-color: $buttonHoverBackgroundColor;
+		border-color: $buttonHoverBorderColor;
+	}
+	&:active {
+		background-color: $buttonActiveBackgroundColor;
+		border-color: $buttonActiveBorderColor;
+		@include transition(none);
+	}
 }
 select {
 	outline: none;
@@ -84,11 +343,6 @@ select {
 option {
 	outline: none;
 }
-::-moz-selection {
-	color: $selectionColor;
-	background-color: $selectionBackgroundColor;
-}
-::selection {
-	color: $selectionColor;
-	background-color: $selectionBackgroundColor;
+textarea {
+
 }
