@@ -3,4 +3,5 @@
 /* -------------------- GLOBAL CLASSES -------------------- */
 .wrapper {
 	@include size(960);
+	margin: auto;
 }

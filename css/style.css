@@ -59,7 +59,7 @@ option { outline: none; }
 ::selection { color: white; background-color: red; }
 
 /* -------------------- GLOBAL CLASSES -------------------- */
-.wrapper { width: 960px; }
+.wrapper { width: 960px; margin: auto; }
 
 /* -------------------- CLASS STYLES -------------------- */
 .left { position: relative; float: left; }
@@ -85,11 +85,11 @@ option { outline: none; }
 .lowercase { text-transform: lowercase; }
 
 /* -------------------- PAGE HEADER -------------------- */
-#page-header { -webkit-box-ordinal-group: 0; -moz-box-ordinal-group: 0; -ms-flex-order: 0; -webkit-order: 0; order: 0; margin: auto; }
+#page-header { -webkit-box-ordinal-group: 0; -moz-box-ordinal-group: 0; -ms-flex-order: 0; -webkit-order: 0; order: 0; -webkit-box-flex-flow: row; -moz-box-flex-flow: row; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; margin: auto; }
 
 /* -------------------- PRIMARY NAVIGATION -------------------- */
 /* -------------------- PAGE CONTENT -------------------- */
-#content { margin: auto; }
+#content { -webkit-box-flex-flow: row; -moz-box-flex-flow: row; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; margin: auto; }
 #content .wrapper { -webkit-box-flex-flow: row; -moz-box-flex-flow: row; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
 #main { width: 670px; margin: auto; }
@@ -97,6 +97,6 @@ option { outline: none; }
 #sidebar { width: 350px; margin: auto; }
 
 /* -------------------- PAGE FOOTER -------------------- */
-#page-footer { margin: auto; }
+#page-footer { -webkit-box-flex-flow: row; -moz-box-flex-flow: row; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-justify-content: center; -moz-box-justify-content: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; margin: auto; }
 
 #disclaimer { font-size: 12px; }
