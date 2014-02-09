@@ -1,45 +1,81 @@
+// Wordpress Theme Declaration
 @import "wordpress";
+
+// Import Meta Data
 @import "mixins";
 @import "variables";
+
+// Import Styling
 @import "reset";
 @import "fonts";
 @import "tags";
 @import "classes";
-@import "class-styles";
+
 
 
 /* -------------------- PAGE HEADER -------------------- */
 #page-header {
-	@include settings(relative);
+	@include flexbox(column, center);
+	margin: auto;
+	.wrapper {
+		@include flexbox(row, flex-start);
+	}
 }
-
-
-/* -------------------- PRIMARY NAVIGATION -------------------- */
+#logo {
+	
+}
 #primary-nav {
-
+	li {
+		@include settings(relative, null, inline-block);
+	}
 }
+
 
 
 /* -------------------- PAGE CONTENT -------------------- */
 #content {
-	@include settings(relative);
-	clear: both;
+	@include flexbox(column, center);
+	margin: auto;
+	.wrapper {
+		@include flexbox(row, center);
+	}
 }
 #main {
-	@include settings(relative, null, null, left);
-	@include size(670);
+	@include flex(0 1 70%);
 }
 #sidebar {
-	@include settings(relative, null, null, right);
-	@include size(350);
+	@include bg(black(0.05));
+	@include flex(0 1 30%);
 }
+
 
 
 /* -------------------- PAGE FOOTER -------------------- */
 #page-footer {
-	@include settings(relative);
-	clear: both;
+	@include flexbox(column, center);
+	margin: auto;
+	.wrapper {
+		@include flexbox(column, center);
+	}
+}
+#sitemap {
+	margin: auto;
+	ul {
+		@include settings(relative, null, null, right);
+		left: -50%;
+	}
+	li {
+		@include settings(relative, null, inline-block, left);
+		left: 50%;
+	}
 }
 #disclaimer {
 	@include font(12);
+	text-align: center;
+	margin: auto;
 }
+
+
+
+// Import Responsive Media Queries
+@import "responsive";
