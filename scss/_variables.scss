@@ -31,13 +31,40 @@ $inputTextColor: black;
 $inputPlaceholderColor: gainsboro;
 $inputBackgroundColor: white;
 $inputBorderColor: lightgray;
-$inputBorderColorFocus: lighten(deepskyblue, 10%);
+$inputFocusBorderColor: lighten(deepskyblue, 10%);
 $inputFocusGlowColor: lighten(deepskyblue, 20%);
+$inputDisabledBackgroundColor: lighten(gainsboro, 11%);
 $inputInvalidTextColor: firebrick;
 $inputInvalidBorderColor: lighten(crimson, 10%);
 $inputInvalidFocusBorderColor: crimson;
 $inputInvalidFocusGlowColor: lighten(crimson, 20%);
 $inputBorderRadius: 4px;
+
+// Select Field Variables
+$selectTextColor: black;
+$selectBackgroundColor: white;
+$selectBorderColor: $inputBorderColor;
+$selectFocusGlowColor: $inputFocusGlowColor;
+$selectDisabledBackgroundColor: $inputDisabledBackgroundColor;
+$selectInvalidTextColor: $inputInvalidTextColor;
+$selectInvalidBorderColor: $inputInvalidBorderColor;
+$selectInvalidFocusBorderColor: $inputInvalidFocusBorderColor;
+$selectInvalidFocusGlowColor: $inputInvalidFocusGlowColor;
+$selectBorderRadius: 4px;
+
+// Textarea Field Variables
+$textareaTextColor: $inputTextColor;
+$textareaPlaceholderColor: $inputPlaceholderColor;
+$textareaBackgroundColor: $inputBackgroundColor;
+$textareaBorderColor: $inputBorderColor;
+$textareaFocusBorderColor: $inputFocusBorderColor;
+$textareaFocusGlowColor: $inputFocusGlowColor;
+$textareaDisabledBackgroundColor: $inputDisabledBackgroundColor;
+$textareaInvalidTextColor: $inputInvalidTextColor;
+$textareaInvalidBorderColor: $inputInvalidBorderColor;
+$textareaInvalidFocusBorderColor: $inputInvalidFocusBorderColor;
+$textareaInvalidFocusGlowColor: $inputInvalidFocusGlowColor;
+$textareaBorderRadius: 4px;
 
 // Button Variables
 $buttonTextColor: black;

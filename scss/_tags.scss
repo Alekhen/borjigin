@@ -152,6 +152,7 @@ input {
 		color: $inputPlaceholderColor;
 	}
 	&[disabled] {
+		background: $inputDisabledBackgroundColor;
 		cursor: not-allowed;
 	}
 	&[readonly] {
@@ -167,8 +168,11 @@ input {
 		border-radius: $inputBorderRadius;
 		@include box-shadow(inset 0 1px 1px black(0.075));
 		@include transition(border 0.2s linear, box-shadow 0.2s linear);
+		&[disabled] {
+			background: $inputDisabledBackgroundColor;
+		}
 		&:focus {
-			border-color: $inputBorderColorFocus;
+			border-color: $inputFocusBorderColor;
 			outline: none;
 			outline: thin dotted \9;
 			/* IE6-9 */
@@ -219,7 +223,7 @@ input {
 		*margin-top: 4px; // For IE7, add top margin to align select with labels
 		width: auto;
 		&:focus {
-			outline: thin dotted $inputBorderColorFocus;
+			outline: thin dotted $inputFocusBorderColor;
 			outline: 5px auto -webkit-focus-ring-color;
 			outline-offset: -2px;
 		}
@@ -259,12 +263,13 @@ input {
 		cursor: pointer;
 		&[disabled] {
 			background-color: transparent;
+			cursor: not-allowed;
 		}
 		&[readonly] {
 			@extend input[type="radio"][disabled];
 		}
 		&:focus {
-			outline: thin dotted $inputBorderColorFocus;
+			outline: thin dotted $inputFocusBorderColor;
 			outline: 5px auto -webkit-focus-ring-color;
 			outline-offset: -2px;
 		}
@@ -276,12 +281,13 @@ input {
 		cursor: pointer;
 		&[disabled] {
 			background-color: transparent;
+			cursor: not-allowed;
 		}
 		&[readonly] {
 			@extend input[type="checkbox"][disabled];
 		}
 		&:focus {
-			outline: thin dotted $inputBorderColorFocus;
+			outline: thin dotted $inputFocusBorderColor;
 			outline: 5px auto -webkit-focus-ring-color;
 			outline-offset: -2px;
 		}
@@ -314,8 +320,8 @@ button {
 	color: $buttonTextColor;
 	@include font(14, $formElementHeight, 300, $helveticaLight);
 	font-size: 100%;
-	background-color: $buttonBackgroundColor;
 	vertical-align: middle;
+	background-color: $buttonBackgroundColor;
 	*overflow: visible;
 	border-radius: $buttonBorderRadius;
 	border: 1px solid $buttonBorderColor;
@@ -338,11 +344,89 @@ button {
 	}
 }
 select {
+	color: $selectTextColor;
+	@include font(14, $formElementHeight, 300, $helveticaLight);
+	font-size: 100%;
+	vertical-align: middle;
+	@include bg($selectBackgroundColor);
+	@include size(null, $formElementHeight); // In IE7, the height of the select element cannot be changed by height, only font-size
+	*margin-top: 4px; // For IE7, add top margin to align select with labels
+	border: 1px solid $selectBorderColor;
+	border-radius: $selectBorderRadius;
 	outline: none;
+	cursor: pointer;
+	&[multiple] {
+		height: auto;
+	}
+	&[size] {
+		@extend select[multiple];
+	}
+	&[disabled] {
+		background: $selectDisabledBackgroundColor;
+		cursor: not-allowed;
+	}
+	&[readonly] {
+		@extend select[disabled];
+	}
+	&:focus {
+		outline: thin dotted $selectFocusGlowColor;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+		&:invalid {
+			color: $selectInvalidTextColor;
+			border-color: $selectInvalidBorderColor;
+			&:focus {
+				border-color: $selectInvalidFocusBorderColor;
+				@include box-shadow(0 0 6px $selectInvalidFocusGlowColor);
+			}
+		}
+	}
 }
 option {
 	outline: none;
 }
 textarea {
-
+	color: $textareaTextColor;
+	@include font(14, $formElementHeight, 300, $helveticaLight);
+	font-size: 100%;
+	vertical-align: top;
+	@include bg($textareaBackgroundColor);
+	@include settings(null, auto);
+	height: auto;
+	border: 1px solid $textareaBorderColor;
+	border-radius: $textareaBorderRadius;
+	outline: none;
+	@include box-shadow(inset 0 1px 1px black(0.075));
+	@include transition(border 0.2s linear, box-shadow 0.2s linear);
+	&:-moz-placeholder {
+		color: $textareaPlaceholderColor;
+	}
+	&:-ms-input-placeholder {
+		color: $textareaPlaceholderColor;
+	}
+	&::-webkit-input-placeholder {
+		color: $textareaPlaceholderColor;
+	}
+	&[disabled] {
+		background: $textareaDisabledBackgroundColor;
+		cursor: not-allowed;
+	}
+	&[readonly] {
+		@extend textarea[disabled];
+	}
+	&:focus {
+		border-color: $textareaFocusBorderColor;
+		outline: 0;
+		outline: thin dotted \9;
+		/* IE6-9 */
+		@include box-shadow(inset 0 1px 1px black(0.075), 0 0 8px $textareaFocusGlowColor);
+		&:invalid {
+			color: $textareaInvalidTextColor;
+			border-color: $textareaInvalidBorderColor;
+			&:focus {
+				border-color: $textareaInvalidFocusBorderColor;
+				@include box-shadow(0 0 6px $textareaInvalidFocusGlowColor);
+			}
+		}
+	}
 }
