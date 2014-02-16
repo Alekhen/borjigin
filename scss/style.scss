@@ -12,10 +12,14 @@
 
 /* -------------------- PAGE HEADER -------------------- */
 #page-header {
-	@include flexbox(column, center);
+	@include flexbox();
+	@include flexbox-flow(column);
+	@include flexbox-justify(center);
 	margin: auto;
 	.wrapper {
-		@include flexbox(row, flex-start);
+		@include flexbox();
+		@include flexbox-flow(row);
+		@include flexbox-justify(flex-start);
 	}
 }
 #logo {
@@ -31,10 +35,14 @@
 
 /* -------------------- PAGE CONTENT -------------------- */
 #content {
-	@include flexbox(column, center);
+	@include flexbox();
+	@include flexbox-flow(column);
+	@include flexbox-justify(center);
 	margin: auto;
 	.wrapper {
-		@include flexbox(row, center);
+		@include flexbox();
+		@include flexbox-flow(row);
+		@include flexbox-justify(center);
 	}
 }
 #main {
@@ -49,10 +57,14 @@
 
 /* -------------------- PAGE FOOTER -------------------- */
 #page-footer {
-	@include flexbox(column, center);
+	@include flexbox();
+	@include flexbox-flow(column);
+	@include flexbox-justify(center);
 	margin: auto;
 	.wrapper {
-		@include flexbox(column, center);
+		@include flexbox();
+		@include flexbox-flow(column);
+		@include flexbox-justify(center);
 	}
 }
 #sitemap {

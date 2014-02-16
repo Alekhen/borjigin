@@ -11,7 +11,9 @@ body {
 	@include font(16, 24, 300, $helveticaLight);
 	@include aliasing(subpixel-antialiased);
 	@include bg($bodyBackgroundColor);
-	@include flexbox(column, center);
+	@include flexbox();
+	@include flexbox-flow(column);
+	@include flexbox-justify(center);
 }
 ::-moz-selection {
 	color: $selectionColor;

@@ -116,6 +116,23 @@
 	}
 }
 
+// Used to set an element as a flexbox
+@mixin flexbox($params:inline) {
+	@if $params == inline {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: inline-flex;
+	} @else {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+}
+
 // Used to set flexbox flow attributes on a flexbox container
 @mixin flexbox-flow($params) {
 	-webkit-box-flex-flow: $params;
@@ -134,38 +151,13 @@
 	justify-content: $params;
 }
 
-// Used to set an element as a flexbox container and define its attributes
-@mixin flexbox($params:null, $justify:null, $display:null) {
-	@if $params == null {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		@if $justify == null {} @else {
-			@include flexbox-justify($justify);
-		}
-	} @else {
-		@include flexbox-flow($params);
-		@if $justify == null {
-			@if $display == null {
-				display: -webkit-box;
-				display: -moz-box;
-				display: -ms-flexbox;
-				display: -webkit-flex;
-				display: flex;
-			}
-		} @else {
-			@include flexbox-justify($justify);
-			@if $display == null {
-				display: -webkit-box;
-				display: -moz-box;
-				display: -ms-flexbox;
-				display: -webkit-flex;
-				display: flex;
-			}
-		}
-	}
+// Used to set the flex attributes of a flex element
+@mixin flex($params) {
+	-webkit-box-flex: $params;
+	-moz-box-flex: $params;
+	-webkit-flex: $params;
+	-ms-flex: $params;
+	flex: $params;
 }
 
 // Used to set the order number of a flex element
@@ -175,24 +167,6 @@
 	-ms-flex-order: $num;
 	-webkit-order: $num;
 	order: $num;
-}
-
-// Used to set the flex attributes of a flex element
-@mixin flex($params:null, $num:null) {
-	@if $params == null {
-		@if $num == null {} @else {
-			@include order($num);
-		}
-	} @else {
-		-webkit-box-flex: $params;
-		-moz-box-flex: $params;
-		-webkit-flex: $params;
-		-ms-flex: $params;
-		flex: $params;
-		@if $num == null {} @else {
-			@include order($num);
-		}
-	}
 }
 
 // Used as a shorthand for setting the width and height properties of an object
@@ -328,13 +302,40 @@
 	}
 }
 
-// Used for moving an element vertically
+// Used for skewing an element vertically
 @mixin skewY($degrees) {
 	-ms-transform: skewY($degrees + deg);
 	-o-transform: skewY($degrees + deg);
 	-moz-transform: skewY($degrees + deg);
 	-webkit-transform: skewY($degrees + deg);
 	transform: skewY($degrees + deg);
+}
+
+// Used for skewing an element horizontally
+@mixin skewX($degrees) {
+	-ms-transform: skewX($degrees + deg);
+	-o-transform: skewX($degrees + deg);
+	-moz-transform: skewX($degrees + deg);
+	-webkit-transform: skewX($degrees + deg);
+	transform: skewX($degrees + deg);
+}
+
+// Used for moving the position of an element
+@mixin translate($params) {
+	-ms-transform: translate($params);
+	-o-transform: translate($params);
+	-moz-transform: translate($params);
+	-webkit-transform: translate($params);
+	transform: translate($params);
+}
+
+// Used for scaling the size of an element
+@mixin scale($value-X, $value-Y) {
+	-ms-transform: scale($value-X, $value-Y);
+	-o-transform: scale($value-X, $value-Y);
+	-moz-transform: scale($value-X, $value-Y);
+	-webkit-transform: scale($value-X, $value-Y);
+	transform: scale($value-X, $value-Y);
 }
 
 // Used for modifying or removing default vender appearances - Defaults to 'none'
@@ -346,17 +347,17 @@
 	appearance: $params;
 }
 
-// Used for quickly applying a CSS3 linear gradient to an element
+// Used for quickly applying a linear gradient to an element
 @mixin linear-gradient($color1, $color2, $reverse:false) {
 	@if $reverse == false {
-		background: $color1;
-		background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
-		background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
-		background: -o-linear-gradient(top, $color1 0%, $color2 100%);
-		background: -ms-linear-gradient(top, $color1 0%, $color2 100%);
-		background: linear-gradient(to bottom, $color1 0%, $color2 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=0);
+		background: $color1; // Old browsers
+		background: -moz-linear-gradient(top, $color1 0%, $color2 100%); // FF3.6+
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2)); // Chrome, Safari4+
+		background: -webkit-linear-gradient(top, $color1 0%, $color2 100%); // Chrome10+, Safari5.1+
+		background: -o-linear-gradient(top, $color1 0%, $color2 100%); // Opera 11.10+
+		background: -ms-linear-gradient(top, $color1 0%, $color2 100%); // IE10+
+		background: linear-gradient(to bottom, $color1 0%, $color2 100%); // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=0); // IE6-9
 	} @else {
 		background: $color2;
 		background: -moz-linear-gradient(top, $color2 0%, $color1 100%);
@@ -369,17 +370,17 @@
 	}
 }
 
-// Used for quickly applying a CSS3 radial gradient to an element
+// Used for quickly applying a radial gradient to an element
 @mixin radial-gradient($color1, $color2, $reverse:false) {
 	@if $reverse == false {
-		background: $color1;
-		background: -moz-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $color1), color-stop(100%, $color2));
-		background: -webkit-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-		background: -o-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-		background: -ms-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-		background: radial-gradient(ellipse at center, $color1 0%, $color2 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=1);
+		background: $color1; // Old browsers
+		background: -moz-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%); // FF3.6+
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $color1), color-stop(100%, $color2)); // Chrome, Safari4+
+		background: -webkit-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%); // Chrome10+, Safari5.1+
+		background: -o-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%); // Opera 11.10+
+		background: -ms-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%); // IE10+
+		background: radial-gradient(ellipse at center, $color1 0%, $color2 100%); // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=1); // IE6-9
 	} @else {
 		background: $color2;
 		background: -moz-radial-gradient(center, ellipse cover, $color2 0%, $color1 100%);
@@ -389,6 +390,22 @@
 		background: -ms-radial-gradient(center, ellipse cover, $color2 0%, $color1 100%);
 		background: radial-gradient(ellipse at center, $color2 0%, $color1 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color2', endColorstr='$color1', GradientType=1);
+	}
+}
+
+// Used for quickly applying a reflected gradient to an element
+@mixin reflected-gradient($color1, $color2, $color3, $reverse:false) {
+	@if $reverse == false {
+		background: #a03020; // Old browsers
+		background: -moz-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); // FF3.6+
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(50%, $color2), color-stop(100%, $color3)); // Chrome, Safari4+
+		background: -webkit-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); // Chrome10+, Safari5.1+
+		background: -o-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); // Opera 11.10+
+		background: -ms-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); // IE10+
+		background: linear-gradient(to right, $color1 0%, $color2 50%, $color3 100%); // W3C
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color1', GradientType=1); // IE6-9
+	} @else {
+
 	}
 }
 
