@@ -209,8 +209,8 @@
 		-moz-background-size: cover;
 		-webkit-background-size: cover;
 		background-size: cover;
-		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
-		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{imagePath($image)}', sizingMethod='scale');
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{imagePath($image)}', sizingMethod='scale')";
 	} @else {
 		@if $image == null {
 			background: $color;
@@ -220,8 +220,8 @@
 			-moz-background-size: cover;
 			-webkit-background-size: cover;
 			background-size: cover;
-			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
-			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{imagePath($image)}', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{imagePath($image)}', sizingMethod='scale')";
 		}
 	}
 }
