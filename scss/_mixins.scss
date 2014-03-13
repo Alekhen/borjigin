@@ -5,6 +5,14 @@
 	@return '../images/' + $image;
 }
 
+// Color Scheme Functions
+@function black($opacity) {
+	@return rgba(0,0,0,$opacity)
+}
+@function white($opacity) {
+	@return rgba(255,255,255,$opacity)
+}
+
 // Used for adding either an inner shadow, drop shadow or both to an element
 @mixin box-shadow($param1, $param2:null) {
 	@if $param2 == null {
@@ -117,29 +125,54 @@
 }
 
 // Used to set an element as a flexbox
-@mixin flexbox($params:inline) {
-	@if $params == inline {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: inline-flex;
-	} @else {
+@mixin flexbox($params:null) {
+	@if $params == null {
 		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
+	} @else if $params == "inline" {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-inline-flex;
+		display: inline-flex;
+	} @else {
+		display: $params;
+		display: $params;
+		display: $params;
+		display: $params;
+		display: $params;
 	}
 }
 
 // Used to set flexbox flow attributes on a flexbox container
-@mixin flexbox-flow($params) {
-	-webkit-box-flex-flow: $params;
-	-moz-box-flex-flow: $params;
-	-webkit-flex-flow: $params;
-	-ms-flex-flow: $params;
-	flex-flow: $params;
+@mixin flexbox-flow($param1, $param2:null) {
+	@if $param2 == null {
+		@include flexbox-direction($param1);
+	} @else {
+		@include flexbox-direction($param1);
+		@include flexbox-wrap($param2);
+	}
+}
+
+// Used to set flexbox direction
+@mixin flexbox-direction($params) {
+	-webkit-box-flex-direction: $params;
+	-moz-box-flex-direction: $params;
+	-webkit-flex-direction: $params;
+	-ms-flex-direction: $params;
+	flex-direction: $params;
+}
+
+// Used to set flexbox wrap
+@mixin flexbox-wrap($params) {
+	-webkit-box-flex-wrap: $params;
+	-moz-box-flex-wrap: $params;
+	-webkit-flex-wrap: $params;
+	-ms-flex-wrap: $params;
+	flex-wrap: $params;
 }
 
 // Used to set flexbox justification
@@ -410,7 +443,12 @@
 }
 
 // Used for adding antialiased text
-@mixin aliasing($params) {
-	-webkit-font-smoothing: $params;
-	font-smoothing: $params;
+@mixin aliasing($params:null) {
+	@if $params == null {
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-smoothing: subpixel-antialiased;
+	} @else {
+		-webkit-font-smoothing: $params;
+		font-smoothing: $params;
+	}
 }

@@ -9,7 +9,7 @@ html {
 body {
 	color: $bodyTextColor;
 	@include font(16, 24, 300, $helveticaLight);
-	@include aliasing(subpixel-antialiased);
+	@include aliasing();
 	@include bg($bodyBackgroundColor);
 	@include flexbox();
 	@include flexbox-flow(column);

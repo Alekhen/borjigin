@@ -7,15 +7,10 @@ $times: "Times New Roman", Times, Serif;
 $georgia: "Georgia", Serif;
 
 // Color Scheme
-$black: #000000;
-
-// Color Scheme Functions
-@function black($opacity) {
-	@return rgba(0,0,0,$opacity)
-}
-@function white($opacity) {
-	@return rgba(255,255,255,$opacity)
-}
+$primary: darkgray;
+$secondary: gray;
+$tertiary: lightgray;
+$accent: red;
 
 // General Variables
 $bodyTextColor: black;
@@ -27,8 +22,8 @@ $selectionBackgroundColor: red;
 $formElementHeight: 20;
 
 // Input Field Variables
-$inputTextColor: black;
-$inputPlaceholderColor: gainsboro;
+$inputTextColor: $primary;
+$inputPlaceholderColor: lighten($primary, 10%);
 $inputBackgroundColor: white;
 $inputBorderColor: lightgray;
 $inputFocusBorderColor: lighten(deepskyblue, 10%);
@@ -41,8 +36,8 @@ $inputInvalidFocusGlowColor: lighten(crimson, 20%);
 $inputBorderRadius: 4px;
 
 // Select Field Variables
-$selectTextColor: black;
-$selectBackgroundColor: white;
+$selectTextColor: $inputTextColor;
+$selectBackgroundColor: $inputBackgroundColor;
 $selectBorderColor: $inputBorderColor;
 $selectFocusGlowColor: $inputFocusGlowColor;
 $selectDisabledBackgroundColor: $inputDisabledBackgroundColor;
@@ -67,9 +62,9 @@ $textareaInvalidFocusGlowColor: $inputInvalidFocusGlowColor;
 $textareaBorderRadius: 4px;
 
 // Button Variables
-$buttonTextColor: black;
-$buttonBackgroundColor: gainsboro;
-$buttonBorderColor: darken(gainsboro, 5%);
+$buttonTextColor: white;
+$buttonBackgroundColor: $accent;
+$buttonBorderColor: darken($accent, 5%);
 $buttonHoverBackgroundColor: lighten($buttonBackgroundColor, 5%);
 $buttonHoverBorderColor: lighten($buttonBorderColor, 5%);
 $buttonActiveBackgroundColor: darken($buttonBackgroundColor, 5%);
