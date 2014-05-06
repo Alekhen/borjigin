@@ -1,5 +1,6 @@
 // Import Meta Data
-@import "mixins";
+@import "config";
+@import "mixins/config";
 @import "variables";
 
 // Import Styling
@@ -87,4 +88,4 @@
 
 
 // Import Responsive Media Queries
-@import "responsive";
+@import "responsive/config";
