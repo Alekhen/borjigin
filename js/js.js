@@ -3,6 +3,8 @@
 /**
  * Definition of the JS object.
  *
+ * @version 1.0
+ *
  * @require jquery.js
  * @require jquery.cycle.js
  * @require jquery.easing.js
@@ -26,7 +28,6 @@ var JS = {
 // END - JS object
 };
 
-$(function() {
-	// Initiate the JS object
+(function($) {
 	JS.init();
-});
+})(jQuery);

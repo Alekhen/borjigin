@@ -4,6 +4,8 @@
  * Definition of the Query object which controlls functionality related
  * to values passed in the URL query string.
  *
+ * @version 1.0
+ *
  * @require jquery.js
  */
 var Query = {
@@ -45,7 +47,6 @@ var Query = {
 // END - Query object
 };
 
-$(function() {
-	// Initiate the Query object
+(function($) {
 	Query.init();
-});
+})(jQuery);

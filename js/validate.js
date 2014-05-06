@@ -6,6 +6,8 @@
  * names, email addresses, phone numbers, non-empty fields, numbers,
  * canadian postal codes, and empty fields (captcha).
  *
+ * @version 1.0
+ *
  * @require jquery.js
  */
 var Validate = {
@@ -329,7 +331,6 @@ var Validate = {
 // END - Validate object
 };
 
-$(function() {
-	// Initiate the Validate object
+(function($) {
 	Validate.init();
-});
+})(jQuery);

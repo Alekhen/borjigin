@@ -4,6 +4,8 @@
  * Definition of the Device object which controls all
  * functionality related specifically to the user's device.
  *
+ * @version 1.1
+ *
  * @require jquery.js
  */
 var Device = {
@@ -122,7 +124,6 @@ var Device = {
 // END - Device object
 };
 
-$(function() {
-	// Initiate the Device object
+(function($) {
 	Device.init();
-});
+})(jQuery);
