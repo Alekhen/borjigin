@@ -8,7 +8,7 @@ html {
 }
 body {
 	color: $bodyTextColor;
-	@include font(16, 24, 300, $helvetica);
+	@include font($baseFontSize, $baseLineHeight, $baseFontWeight, $font);
 	@include aliasing();
 	@include bg($bodyBackgroundColor);
 	@include flexbox();
@@ -27,25 +27,25 @@ body {
 
 /* -------------------- TAGS ASSOCIATED WITH TEXT -------------------- */
 h1 {
-	@include font(48, 58, 700);
+	@include font(($baseFontSize + 32), ($baseLineHeight + 38), $headerFontWeight);
 }
 h2 {
-	@include font(36, 46, 700);
+	@include font(($baseFontSize + 20), ($baseLineHeight + 26), $headerFontWeight);
 }
 h3 {
-	@include font(24, 32, 700);
+	@include font(($baseFontSize + 8), ($baseLineHeight + 12), $headerFontWeight);
 }
 h4 {
-	@include font(22, 26, 700);
+	@include font(($baseFontSize + 6), ($baseLineHeight + 6), $headerFontWeight);
 }
 h5 {
-	@include font(18, 24, 700);
+	@include font(($baseFontSize + 2), ($baseLineHeight + 2), $headerFontWeight);
 }
 h6 {
-	@include font(16, 22, 700);
+	@include font($baseFontSize, $baseLineHeight, $headerFontWeight);
 }
 p {
-	@include font(16, 20);
+	@include font($baseFontSize, $baseLineHeight);
 	margin-bottom: 24px;
 }
 a {
@@ -133,7 +133,7 @@ label {
 }
 input {
 	color: $inputTextColor;
-	@include font(14, $formElementHeight, 300, $helvetica);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
 	font-size: 100%;
 	vertical-align: middle;
 	*overflow: visible;
@@ -219,7 +219,7 @@ input {
 	}
 	&[type="file"] {
 		@extend input[type="text"];
-		@include font(12, $formElementHeight, 300, $helvetica);
+		@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
 		line-height: $formElementHeight + 10px;
 		height: $formElementHeight + 10px; // In IE7, the height of the select element cannot be changed by height, only font-size
 		*margin-top: 4px; // For IE7, add top margin to align select with labels
@@ -320,7 +320,7 @@ input {
 }
 button {
 	color: $buttonTextColor;
-	@include font(14, $formElementHeight, 300, $helvetica);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
 	font-size: 100%;
 	vertical-align: middle;
 	background-color: $buttonBackgroundColor;
@@ -347,7 +347,7 @@ button {
 }
 select {
 	color: $selectTextColor;
-	@include font(14, $formElementHeight, 300, $helvetica);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
 	font-size: 100%;
 	vertical-align: middle;
 	@include bg($selectBackgroundColor);
@@ -389,7 +389,7 @@ option {
 }
 textarea {
 	color: $textareaTextColor;
-	@include font(14, $formElementHeight, 300, $helvetica);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
 	font-size: 100%;
 	vertical-align: top;
 	@include bg($textareaBackgroundColor);
